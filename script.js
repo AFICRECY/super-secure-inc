@@ -5,6 +5,10 @@ var generateBtn = document.querySelector("#generate");
 // when they hit the submit button, i will run a validate function which makes sure that the character length is between 8-128 and that at least one character type of chosen. At lease one of those checkboxes has to be true. 
 // if the criteria is not met, dont offer the password and alert user. 
 // if criteria is met generate a password. 
+// have a const charOptions, which will be a combination of the const defined. Based on whether or not the given values are true. Add all the trues together to make one big string. 
+// 
+
+
 
 function generatePassword(
     length,
@@ -14,19 +18,49 @@ function generatePassword(
     specialCharacters,
     ) {
 
+
+    var charOptions = ""
     const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     const lowercaseChars = "abcdefghijklmnopqrstuvwxyz"
     const numbersChars = "0123456789"
-   const chars = "@#$%^&*()_+?><:{}[]'"
+    const chars = "@#$%^&*()_+?><:{}[]'"
+
+ if (lowercase = true) {
+    charOptions = charOptions + lowercaseChars;
+ }
+ if (uppercase = true) {
+    charOptions = charOptions + lowercaseChars;
+ }
+ if (numbersChars = true) {
+    charOptions = charOptions + numbersChars;
+ }
+ if (chars = true) {
+    charOptions = charOptions + chars;
+ }
+
+
+ 
+
+
+
+
+
+
+// create master list.
+
+
 
    var passwordLength = length;
    var password = '';
 
     for (var i = 8; i < passwordLength; i++) {
      var number = Math.floor(Math.random() * chars.length);
-     return password;
+    //  create variable char that is char options at index of the number. 
 }
+return password;
 }
+// its chars*length because we are choosing a random number from our char options.
+// random number is the index of the string we are trying to use. 
 
     //  passsword += chars.substring(number, number +1);
     //  console.log(password);
