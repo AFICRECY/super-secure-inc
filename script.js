@@ -9,7 +9,16 @@ function generatePassword() {
    var passwordLength = 128;
    var password = '';
 // set the max password length to be at 128 characters. Then set the variable of password equal to an empty string because Javascript will populate the value when the function is complete. 
-console.log("Clicked")
+// console.log("Clicked")
+
+// setting i at its minimum length, and then setting the passwordLength to 128 at its max length. i followed some of the range function.
+for (var i = 8; i < passwordLength; i++) {
+    var number = Math.floor(Math.random()* chars.length);
+    
+    
+    
+    console.log(number);
+
 
 
 
