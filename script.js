@@ -4,7 +4,13 @@ var generateBtn = document.querySelector("#generate");
 
 
 function generatePassword() {
-    console.log("Clicked")
+   const chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz@#$%^&*()_+?><:{}[]’"
+//    defined the function by setting chars equal to all the character inputs that the password generator would pull from. 
+   var passwordLength = 128;
+   var password = '';
+// set the max password length to be at 128 characters. Then set the variable of password equal to an empty string because Javascript will populate the value when the function is complete. 
+console.log("Clicked")
+
 
 
 // 1. Prompt the user for the password criteria.
