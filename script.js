@@ -25,10 +25,11 @@ function writePassword() {
    }
 }
 
+passwordLength = prompt("Put below how many characters you would like your passowrd to be. Password must be between 8 and 128 characters");
 
 function generatePassword() {
    var password: "";
-for (var i = 8; i < passwordLength; i++) {
+for (var i = 0; i < passwordLength; i++) {
    var number = Math.floor(Math.random() * chars.length);
    password = password + choice[number]
 }
@@ -36,12 +37,32 @@ for (var i = 8; i < passwordLength; i++) {
    return password;
 }
 
+function grabPrompt( {
+choice = [];
+
+   if (lowercase = true) {
+      charOptions = charOptions + lowercaseChars;
+   }
+   if (uppercase = true) {
+      charOptions = charOptions + uppercaseChars;
+   }
+   if (numbersChars = true) {
+      charOptions = charOptions + numbersChars;
+   }
+   if (chars = true) {
+      charOptions = charOptions + chars;
+   }
+
+
+})
+
+
+
+
+
 
 var userChoice = prompt("How many characters would you like for your password to be included?");
-for (var i = 8; i < passwordLength; i++) {
-   var number = Math.floor(Math.random() * chars.length);
 
-}
 
 
 
@@ -53,18 +74,7 @@ function writePassword() {
  
 
 
-if (lowercase = true) {
-   charOptions = charOptions + lowercaseChars;
-}
-if (uppercase = true) {
-   charOptions = charOptions + uppercaseChars;
-}
-if (numbersChars = true) {
-   charOptions = charOptions + numbersChars;
-}
-if (chars = true) {
-   charOptions = charOptions + chars;
-}
+
 
 
 
