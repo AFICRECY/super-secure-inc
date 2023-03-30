@@ -1,28 +1,46 @@
 // Assignment Code
 
-var passwordLength = 128;
-var choice = ""
 var uppercaseChars = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
 var lowercaseChars = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 var numbersChars = ['0','1','2','3','4','5','6','7','8','9']
 var chars = ['@','#','$','%','^','&','*','(',')','_','+','?','>,',':','{','}','[',']']
+var passwordLength = 128;
+var choice = ""
 
 var generateBtn = document.querySelector("#generate");
 // this button cooresponds with the id in the html and generates the write password function.
 
 generateBtn.addEventListener("click", writePassword);
 
+
 function writePassword() {
-   var promptP = getPrompt() {
-   var passWordInput = 
+   var promptP = grabPrompt(); 
+   var passwordInput = document .querySelector("#password")
+  
+   if (promptsP) {
+      var newPassword = generatePassword();
+      var passwordInput.value = updatedpassword;
+   } else {
+      passwordInput ="";
    }
 }
+
+
 
 var userChoice = prompt("How many characters would you like for your password to be included?");
 for (var i = 8; i < passwordLength; i++) {
    var number = Math.floor(Math.random() * chars.length);
 
 }
+
+
+
+function writePassword() {
+   var password = generatePassword();
+   var passwordText = document.querySelector("#password").passwordText.value = password;
+ 
+ }
+ 
 
 
 if (lowercase = true) {
@@ -59,12 +77,12 @@ function generatePassword(
     specialCharacters,
     ) {
 
-    var charOptions = ""
-    const uppercaseChars = "'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'"
-    const lowercaseChars = "'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v,'w','x','y','z'"
-    const numbersChars = "'0','1','2','3','4','5','6','7','8','9'"
-    const chars = "'@','#','$','%','^','&','*','(',')','_','+','?','>,',':','{','}','[',']''"
-    displayList
+   //  var charOptions = ""
+   //  const uppercaseChars = "'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'"
+   //  const lowercaseChars = "'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v,'w','x','y','z'"
+   //  const numbersChars = "'0','1','2','3','4','5','6','7','8','9'"
+   //  const chars = "'@','#','$','%','^','&','*','(',')','_','+','?','>,',':','{','}','[',']''"
+   //  displayList
 
 
 
@@ -76,10 +94,6 @@ function generatePassword(
 
 // create master list.
 
-
-
-   var passwordLength = length;
-   var password = '';
 
     for (var i = 8; i < passwordLength; i++) {
      var number = Math.floor(Math.random() * chars.length);
@@ -97,11 +111,6 @@ return password;
 // return "Generated Password";
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password").passwordText.value = password;
-
-}
 
 // Add event listener to generate button
 
