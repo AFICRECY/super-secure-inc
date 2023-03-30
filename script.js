@@ -18,14 +18,20 @@ function writePassword() {
    var passwordInput = document .querySelector("#password")
   
    if (promptsP) {
-      var newPassword = generatePassword();
+      var updatedpassword = generatePassword();
       var passwordInput.value = updatedpassword;
    } else {
       passwordInput ="";
    }
 }
 
-passwordLength = prompt("Put below how many characters you would like your passowrd to be. Password must be between 8 and 128 characters");
+passwordLength = prompt("Put below how many characters you would like your passowrd to be. Password must be between 8 and 128 characters"); 
+   if (options < 8 || > 128); {
+      options = options + passwordLength;
+}
+
+
+
 
 function generatePassword() {
    var password= "";
@@ -49,7 +55,7 @@ options = [];
       console.log("options", options);
    }
    if (confirm("Do you want to include numbers in your password?")) (numbersChars = true); {
-      options = options + numbersChar;
+      options = options + numbersChars;
       console.log("options", options);
 
 
