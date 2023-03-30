@@ -5,7 +5,7 @@ var lowercaseChars = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o
 var numbersChars = ['0','1','2','3','4','5','6','7','8','9']
 var chars = ['@','#','$','%','^','&','*','(',')','_','+','?','>,',':','{','}','[',']']
 var passwordLength = 128;
-var choice = ""
+var options = ""
 
 var generateBtn = document.querySelector("#generate");
 // this button cooresponds with the id in the html and generates the write password function.
@@ -28,7 +28,7 @@ function writePassword() {
 passwordLength = prompt("Put below how many characters you would like your passowrd to be. Password must be between 8 and 128 characters");
 
 function generatePassword() {
-   var password: "";
+   var password= "";
 for (var i = 0; i < passwordLength; i++) {
    var number = Math.floor(Math.random() * chars.length);
    password = password + choice[number]
@@ -37,31 +37,38 @@ for (var i = 0; i < passwordLength; i++) {
    return password;
 }
 
-function grabPrompt( {
-choice = [];
+function grabPrompt() {
+options = [];
 
-   if (lowercase = true) {
-      charOptions = charOptions + lowercaseChars;
+   if (confirm("Do you want to include lowercase letters in your password?")) (lowercaseChars = true); {
+      options = options + lowercaseChars;
+      console.log("options", options);
    }
-   if (uppercase = true) {
-      charOptions = charOptions + uppercaseChars;
+   if (confirm("Do you want to include uppercase letters in your password?")) (uppercaseChars = true); {
+      options = options + uppercaseChars;
+      console.log("options", options);
    }
-   if (numbersChars = true) {
-      charOptions = charOptions + numbersChars;
-   }
-   if (chars = true) {
-      charOptions = charOptions + chars;
-   }
+   if (confirm("Do you want to include numbers in your password?")) (numbersChars = true); {
+      options = options + numbersChar;
+      console.log("options", options);
 
 
-})
-
+}
+}
 
 
 
 
 
-var userChoice = prompt("How many characters would you like for your password to be included?");
+
+
+
+
+
+
+
+
+
 
 
 
