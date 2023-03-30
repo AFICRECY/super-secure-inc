@@ -1,4 +1,11 @@
 // Assignment Code
+
+var charOptions = ""
+    const uppercaseChars = "'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'"
+    const lowercaseChars = "'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v,'w','x','y','z'"
+    const numbersChars = "'0','1','2','3','4','5','6','7','8','9'"
+    const chars = "'@','#','$','%','^','&','*','(',')','_','+','?','>,',':','{','}','[',']''"
+
 var generateBtn = document.querySelector("#generate");
 
 // when they click this button a prompt pops up which has multiple feilds (one feild for length,uppercase,lowercase,numbers,specialCharacters). And a submitt button
@@ -9,7 +16,6 @@ var generateBtn = document.querySelector("#generate");
 // 
 
 
-
 function generatePassword(
     length,
     uppercase,
@@ -18,18 +24,18 @@ function generatePassword(
     specialCharacters,
     ) {
 
-
     var charOptions = ""
-    const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-    const lowercaseChars = "abcdefghijklmnopqrstuvwxyz"
-    const numbersChars = "0123456789"
-    const chars = "@#$%^&*()_+?><:{}[]'"
+    const uppercaseChars = "'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'"
+    const lowercaseChars = "'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v,'w','x','y','z'"
+    const numbersChars = "'0','1','2','3','4','5','6','7','8','9'"
+    const chars = "'@','#','$','%','^','&','*','(',')','_','+','?','>,',':','{','}','[',']''"
+    displayList
 
  if (lowercase = true) {
     charOptions = charOptions + lowercaseChars;
  }
  if (uppercase = true) {
-    charOptions = charOptions + lowercaseChars;
+    charOptions = charOptions + uppercaseChars;
  }
  if (numbersChars = true) {
     charOptions = charOptions + numbersChars;
@@ -39,7 +45,6 @@ function generatePassword(
  }
 
 
- 
 
 
 
