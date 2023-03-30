@@ -1,8 +1,9 @@
 // Assignment Code
 
-var passwordLength: 128;
+var passwordLength = 128;
+var choice = ""
 var uppercaseChars = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
-var lowercaseChars = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v,'w','x','y','z']
+var lowercaseChars = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 var numbersChars = ['0','1','2','3','4','5','6','7','8','9']
 var chars = ['@','#','$','%','^','&','*','(',')','_','+','?','>,',':','{','}','[',']']
 
@@ -11,13 +12,35 @@ var generateBtn = document.querySelector("#generate");
 
 generateBtn.addEventListener("click", writePassword);
 
-
+function writePassword() {
+   var promptP = getPrompt() {
+   var passWordInput = 
+   }
+}
 
 var userChoice = prompt("How many characters would you like for your password to be included?");
 for (var i = 8; i < passwordLength; i++) {
    var number = Math.floor(Math.random() * chars.length);
 
 }
+
+
+if (lowercase = true) {
+   charOptions = charOptions + lowercaseChars;
+}
+if (uppercase = true) {
+   charOptions = charOptions + uppercaseChars;
+}
+if (numbersChars = true) {
+   charOptions = charOptions + numbersChars;
+}
+if (chars = true) {
+   charOptions = charOptions + chars;
+}
+
+
+
+
 
 
 // when they click this button a prompt pops up which has multiple feilds (one feild for length,uppercase,lowercase,numbers,specialCharacters). And a submitt button
@@ -43,18 +66,6 @@ function generatePassword(
     const chars = "'@','#','$','%','^','&','*','(',')','_','+','?','>,',':','{','}','[',']''"
     displayList
 
- if (lowercase = true) {
-    charOptions = charOptions + lowercaseChars;
- }
- if (uppercase = true) {
-    charOptions = charOptions + uppercaseChars;
- }
- if (numbersChars = true) {
-    charOptions = charOptions + numbersChars;
- }
- if (chars = true) {
-    charOptions = charOptions + chars;
- }
 
 
 
