@@ -26,6 +26,16 @@ function writePassword() {
 }
 
 
+function generatePassword() {
+   var password: "";
+for (var i = 8; i < passwordLength; i++) {
+   var number = Math.floor(Math.random() * chars.length);
+   password = password + choice[number]
+}
+   console.log("password", password)
+   return password;
+}
+
 
 var userChoice = prompt("How many characters would you like for your password to be included?");
 for (var i = 8; i < passwordLength; i++) {
