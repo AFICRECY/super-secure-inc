@@ -118,24 +118,25 @@ for (var i = 0; i < passwordLength; i++) {
 
 ### Usage: 
 
+There are many reasons that a person or company would like to ultilize this software. Having the ability to have an unhackable and secure password is the next step in protecting your data and sensitive information. Having a password generator is key in having employees who work for governmental organizations handling either client data/ or top-secret information. Even more, in hospitals patient data should be protected with secure passwords. The most prevelent hackers can break through computer software and systems if passwords are chosen too laxly.
 
-
+This software at Super Secure Inc. will guarantee a randomly selected, safe, and strong password. By having an option of numbers Uppercase, Lowercase, and Special Characters, users will get an opportunity to make passwords that could never be replicated or guessed. Aside from the positive features this website provides, it does not require installation, but instead a visit to our site! 
 
 
 ## Credits:
 The below links helped as a reference to creating this web page:
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
-https://dev.to/ycmjason/how-to-create-range-in-javascript-539i
-https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
-https://css-tricks.com/lots-of-ways-to-use-math-random-in-javascript/
-https://www.w3schools.com/jsref/jsref_substring.asp#:~:text=Definition%20and%20Usage,not%20change%20the%20original%20string.
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
-https://stackoverflow.com/questions/59904757/random-password-generator-javascript-not-returning-password
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
-https://www.w3schools.com/jsref/prop_text_value.asp#:~:text=The%20value%20property%20sets%20or,value%20set%20by%20a%20script). 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
+* https://dev.to/ycmjason/how-to-create-range-in-javascript-539i
+* https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
+* https://css-tricks.com/lots-of-ways-to-use-math-random-in-javascript/
+* https://www.w3schools.com/jsref/jsref_substring.asp#:~:text=Definition%20and%20Usage,not%20change%20the%20original%20string.
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
+* https://stackoverflow.com/questions/59904757/random-password-generator-javascript-not-returning-password
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
+* https://www.w3schools.com/jsref/prop_text_value.asp#:~:text=The%20value%20property%20sets%20or,value%20set%20by%20a%20script). 
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
 
 
 ### License:
