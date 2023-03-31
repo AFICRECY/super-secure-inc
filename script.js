@@ -1,5 +1,3 @@
-// Assignment Code
-
 // Pseudo-Code:
 // 1. when the user clicks the button "Generate Password"
 // 2. A prompt pops up that asks her how many characters they want to include and telling them there is a limit 8-128
@@ -38,7 +36,6 @@ var generateBtn = document.querySelector("#generate");
 // this button cooresponds with the id in the html and generates the write password function.
 var passwordElement = document.querySelector("#password");
 
-console.log("options", options);
 
 function generatePassword() {
    // password will change as characters are added to it down below
@@ -56,7 +53,7 @@ function generatePassword() {
    // if the user does not input a number, the isNaN function will run and will bring up the alert, write password will be 
    // initiated again and bring the user back to the prompt.
    if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
-      alert('Hey please select a proper length');
+      alert('Hey please select a proper length.');
       // after the alert, run writePassword again
       writePassword();
       return null;
