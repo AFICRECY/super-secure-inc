@@ -45,7 +45,7 @@ function generatePassword() {
    var password = "";
 
    // prompt the user for password length. How?
-   passwordLength = prompt("Put below how many characters you would like your passowrd to be. Password must be between 8 and 128 characters");
+   passwordLength = prompt("How long would you like for your password to be? (Must be between 8 and 128 characters)");
    
    if (passwordLength == null) return null;
    //console.log('passwordLength pre parsing', typeof passwordLength, passwordLength)
@@ -53,6 +53,8 @@ function generatePassword() {
 
    //console.log('passwordLength post parsing', typeof passwordLength, passwordLength)
    
+   // if the user does not input a number, the isNaN function will run and will bring up the alert, write password will be 
+   // initiated again and bring the user back to the prompt.
    if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
       alert('Hey please select a proper length');
       // after the alert, run writePassword again
