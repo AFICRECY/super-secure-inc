@@ -39,10 +39,11 @@ var passwordLength;
   //console.log('passwordLength pre parsing', typeof passwordLength, passwordLength)
   passwordLength = parseInt(passwordLength);
 ```
+
 (the value of finalCharactersArray)
-`
+```
  password = password + finalCharactersArray(index)
-`
+```
 
 More into the project I decided to use a document.queryselector which had handles (ids) registered within the HTML document. There were two ids (generate) and (password) that were placed on the button. When clicked, the variable (passwordElement)  and (generateBtn) will run the write password function at the bottom of the page where the (passwordElement.textContent) and (add.EventListener) are applied initiating the next step (alerts)
 
