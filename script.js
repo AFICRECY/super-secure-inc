@@ -27,8 +27,9 @@ function writePassword() {
 
 passwordLength = prompt("Put below how many characters you would like your passowrd to be. Password must be between 8 and 128 characters"); 
    if (options < 8 || > 128); {
-      options = options + passwordLength;
-}
+      else { prompt("Please select a password length between 8-128")
+         options = options + passwordLength};
+}        console.log("options", options);
 
 
 
