@@ -26,6 +26,7 @@ var uppercaseChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L'
 var lowercaseChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 var numbersChars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 var chars = ['@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+', '?', '>,', ':', '{', '}', '[', ']']
+var finalCharactersArray = [];
 var passwordLength;
 var options = "";
 var wantsUppercase;
@@ -35,19 +36,24 @@ var wantsChars;
 
 var generateBtn = document.querySelector("#generate");
 // this button cooresponds with the id in the html and generates the write password function.
+var passwordElement = document.querySelector("#password");
 
 console.log("options", options);
 
 function generatePassword() {
+   // password will change as characters are added to it down below
    var password = "";
+
    // prompt the user for password length. How?
    passwordLength = prompt("Put below how many characters you would like your passowrd to be. Password must be between 8 and 128 characters");
-   if(passwordLength == null ) return false;
-   console.log('passwordLength pre parsing', typeof passwordLength, passwordLength)
+   
+   if (passwordLength == null) return null;
+   //console.log('passwordLength pre parsing', typeof passwordLength, passwordLength)
    passwordLength = parseInt(passwordLength);
 
-   console.log('passwordLength post parsing', typeof passwordLength, passwordLength)
-   if(isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+   //console.log('passwordLength post parsing', typeof passwordLength, passwordLength)
+   
+   if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
       alert('Hey please select a proper length');
       // after the alert, run writePassword again
       writePassword();
@@ -55,18 +61,41 @@ function generatePassword() {
    } else {
       // this else code runs if the user selected a value between 8 and 128!
       // what code do you want to run in the event the user selected a proper length?
-       wantsUpper = confirm('Do you want uppercase letters in your password?');
-       wantsLowercase = confirm('Do you want lowercase letters in your password?');
-       wantsNumbers = confirm('Do you want numbers in your password?');
-       wantsChars = confirm('Do you want special characters in your password?');
+      wantsUpper = confirm('Do you want uppercase letters in your password?');
+      wantsLower = confirm('Do you want lowercase letters in your password?');
+      wantsNumbers = confirm('Do you want numbers in your password?');
+      wantsChars = confirm('Do you want special characters in your password?');
+
+      if (wantsUpper) {
+         finalCharactersArray = finalCharactersArray.concat(uppercaseChars);
+         console.log('finalCharactersArray looks like ', finalCharactersArray);
+      };
+      if (wantsLower) {
+         finalCharactersArray = finalCharactersArray.concat(lowercaseChars);
+         console.log('finalCharactersArray looks like ', finalCharactersArray);
+      };
+      if (wantsNumbers) {
+         finalCharactersArray = finalCharactersArray.concat(numbersChars);
+         console.log('finalCharactersArray looks like ', finalCharactersArray);
+      };
+      if (wantsChars) {
+         finalCharactersArray = finalCharactersArray.concat(chars);
+         console.log('finalCharactersArray looks like ', finalCharactersArray);
+      }
+
+      // now that you have an array of all the possible characters the user wants
+      // randomly select a character, add it to some string, and repeat this as many times
+      // as you need to reach the length desired by the user
+      for (var i = 0; i < passwordLength; i++) {
+         var index = Math.floor(Math.random() * finalCharactersArray.length);
+         password = password + finalCharactersArray[index]
+      }
+      console.log("password", password)
+      return password;
+
    }
 
-   // for (var i = 0; i < passwordLength; i++) {
-   //    var number = Math.floor(Math.random() * chars.length);
-   //    password = password + choice[number]
-   // }
-   // console.log("password", password)
-   // return password;
+
 }
 
 // function grabPrompt() {
@@ -104,7 +133,11 @@ function generatePassword() {
 
 function writePassword() {
    var password = generatePassword();
-   var passwordText = document.querySelector("#password").passwordText.value = password;
+   // If the returned value from generatePassword above happens to be null or undefined, then
+   // in the line of code below, I check whether the value is null or undefined and if it's true then I set
+   // the text content of my password element to 'Try again'; if it's NOT null or undefined, then I simply set
+   // the text content to my variable password.
+   passwordElement.textContent = password ?? 'Try again';
 }
 
 generateBtn.addEventListener('click', writePassword);
