@@ -17,38 +17,108 @@ There are many companies that handle sensitive and maybe even top secret informa
 
 
 ## Table of Contents: 
-* Installation (Refactoring & Accessibility)
+* Installation (JavaScript, Functions Alert/Confirm/Prompt, IsNaN, and QuerySelectors)
 * Usage
 * Credits 
 * License
 
 
 ### Installation: 
- This project required a decent knowledge of JavaScript. The code in script.js facilitates the interactivity with the user as well as the arithmatic required to select a random secure password. To start off with, I declared multiple global scope variables at the top of the page of code. However, there are some variables which were intentionally left empty and would be given a value later on in the code. 
+ This project required a decent knowledge of JavaScript. The code in script.js facilitates the interactivity with the user as well as the arithmetic required to select a random secure password. To start off with, I declare multiple global scope variables at the top of the page of code. However, there are some variables which were intentionally left empty and would be given a value later on in the code.
+(The example below is of the empty variable at the top)
+```
+var finalCharactersArray = [];
+var passwordLength;
+```
+
+(The example below is the last assigned value of those variables)
+```
+ passwordLength = prompt("How long would you like for your password to be? (Must be between 8 and 128 characters)");
  
- (The example below is of the empty variable at the top)
- ```
- var finalCharactersArray = [];
- var passwordLength;
- ```
-
- (The example below is the last assigned value of those variables)
+  if (passwordLength == null) return null;
+  //console.log('passwordLength pre parsing', typeof passwordLength, passwordLength)
+  passwordLength = parseInt(passwordLength);
 ```
-  passwordLength = prompt("How long would you like for your password to be? (Must be between 8 and 128 characters)");
-   
-   if (passwordLength == null) return null;
-   //console.log('passwordLength pre parsing', typeof passwordLength, passwordLength)
-   passwordLength = parseInt(passwordLength);
-```
+(the value of finalCharactersArray)
 `
-  password = password + finalCharactersArray[index]
+ password = password + finalCharactersArray(index)
 `
 
-More into the project I decided to use a document.queryselector which had handles (ids) registered within the HTML document. The queryselector 
+More into the project I decided to use a document.queryselector which had handles (ids) registered within the HTML document. There were two ids (generate) and (password) that were placed on the button. When clicked, the variable (passwordElement)  and (generateBtn) will run the write password function at the bottom of the page where the (passwordElement.textContent) and (add.EventListener) are applied initiating the next step (alerts)
 
 
+(The below code is the initial query selectors and their handles)
+```
+var generateBtn = document.querySelector("#generate");
+
+var passwordElement = document.querySelector("#password");
+```
+
+(Here is where they are applied below.)
+```
+function writePassword() {
+  var password = generatePassword();
+
+  passwordElement.textContent = password ?? 'Try again';
+}
+
+generateBtn.addEventListener('click', writePassword);
+```
+
+
+Furthermore, once the user does press “generate button”, I installed a Windows.prompt() Method. The user is prompted to choose a character length, within a given range. For any value that is not within the characters and I also not within the character range, I had to create an “if/else” statement. I decided to use the IsNaN function within the generatePassword function. The IsNan function would come into play only if the user decides to input any other value except for a number. On the other end, if the user decides to put in a number that is outside of the range limit (8-128 characters) then in either (or, | |) situation they would receive a Windows.alert() Method. The alert should tell them to try again. The else portion of the statement is if the user decided to actually select a value between 8-128. For the else portion, I used the Windows.confirm() Method to bring up all of the other criteria options for the user. 
+
+(The code below shows the “If/Else Statement, the “IsNaN function, and the prompt(), alert(), and confirm() methods). 
+```
+if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+     alert('Hey please select a proper length.');
+     // after the alert, run writePassword again
+     writePassword();
+     return null;
+  } else {
+     // this else code runs if the user selected a value between 8 and 128!
+     wantsUpper = confirm('Do you want uppercase letters in your password?');
+     wantsLower = confirm('Do you want lowercase letters in your password?');
+     wantsNumbers = confirm('Do you want numbers in your password?');
+     wantsChars = confirm('Do you want special characters in your password?');
+```
+
+
+The next section of my code adds together and tracks the users preferences.They will be given a confirm() window which will ask them “If they want uppercase, lowercase, numbers, or special characters in their password. Once they make their decisions, the .concat method is used to track their inputs and set it equal to the variable of final “charactersArray”. 
+
+(The resulting code is below)
+```
+if (wantsUpper) {
+        finalCharactersArray = finalCharactersArray.concat(uppercaseChars);
+        console.log('finalCharactersArray looks like ', finalCharactersArray);
+     };
+     if (wantsLower) {
+        finalCharactersArray = finalCharactersArray.concat(lowercaseChars);
+        console.log('finalCharactersArray looks like ', finalCharactersArray);
+     };
+     if (wantsNumbers) {
+        finalCharactersArray = finalCharactersArray.concat(numbersChars);
+        console.log('finalCharactersArray looks like ', finalCharactersArray);
+     };
+     if (wantsChars) {
+        finalCharactersArray = finalCharactersArray.concat(chars);
+        console.log('finalCharactersArray looks like ', finalCharactersArray);
+     }
+```
+
+
+Lastly, I used the “Math.floor(Math.random()” in order to initiate a random selection for the password to be assembled from, considering all of the users criteria. The Math.random method should keep running and selecting random characters until the password length is reached. (
+
+The respective code is below.) 
+```
+for (var i = 0; i < passwordLength; i++) {
+        var index = Math.floor(Math.random() * finalCharactersArray.length);
+        password = password + finalCharactersArray[index]
+```
 
 ### Usage: 
+
+
 
 
 
@@ -62,6 +132,7 @@ https://css-tricks.com/lots-of-ways-to-use-math-random-in-javascript/
 https://www.w3schools.com/jsref/jsref_substring.asp#:~:text=Definition%20and%20Usage,not%20change%20the%20original%20string.
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
 https://stackoverflow.com/questions/59904757/random-password-generator-javascript-not-returning-password
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
 https://www.w3schools.com/jsref/prop_text_value.asp#:~:text=The%20value%20property%20sets%20or,value%20set%20by%20a%20script). 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
