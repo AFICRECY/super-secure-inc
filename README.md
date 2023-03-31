@@ -24,7 +24,27 @@ There are many companies that handle sensitive and maybe even top secret informa
 
 
 ### Installation: 
+ This project required a decent knowledge of JavaScript. The code in script.js facilitates the interactivity with the user as well as the arithmatic required to select a random secure password. To start off with, I declared multiple global scope variables at the top of the page of code. However, there are some variables which were intentionally left empty and would be given a value later on in the code. 
  
+ (The example below is of the empty variable at the top)
+ ```
+ var finalCharactersArray = [];
+ var passwordLength;
+ ```
+
+ (The example below is the last assigned value of those variables)
+```
+  passwordLength = prompt("How long would you like for your password to be? (Must be between 8 and 128 characters)");
+   
+   if (passwordLength == null) return null;
+   //console.log('passwordLength pre parsing', typeof passwordLength, passwordLength)
+   passwordLength = parseInt(passwordLength);
+```
+`
+  password = password + finalCharactersArray[index]
+`
+
+More into the project I decided to use a document.queryselector which had handles (ids) registered within the HTML document. The queryselector 
 
 
 
@@ -37,10 +57,15 @@ The below links helped as a reference to creating this web page:
 
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
 https://dev.to/ycmjason/how-to-create-range-in-javascript-539i
+https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector
 https://css-tricks.com/lots-of-ways-to-use-math-random-in-javascript/
 https://www.w3schools.com/jsref/jsref_substring.asp#:~:text=Definition%20and%20Usage,not%20change%20the%20original%20string.
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing
 https://stackoverflow.com/questions/59904757/random-password-generator-javascript-not-returning-password
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat
 https://www.w3schools.com/jsref/prop_text_value.asp#:~:text=The%20value%20property%20sets%20or,value%20set%20by%20a%20script). 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN
+
 
 ### License:
 MIT License
