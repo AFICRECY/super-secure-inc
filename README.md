@@ -11,7 +11,7 @@
 
 ## Description: 
 
-[Visit Deployed Site]: 
+[Visit Deployed Site]: https://aficrecy.github.io/super-secure-inc/
 
 There are many companies that handle sensitive and maybe even top secret information. And within those companies, it is required that their employees can have access to and handle that information without risks. In a world full of hackers and threats to online security, it is important to have a super secure password. Super Secure Inc. is a website that can auto generate a safe and secure password with consideration to the users preferences. This website contains a feature that allows the user to place their character length, letter, and number preferences to then produce an auto generated super secure password. With our AI automatically generating a random password, employeers and employees can breathe easy knowing their information and data are safe. 
 
